@@ -1,0 +1,83 @@
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--border-radius-md);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  outline: none;
+  padding: var(--spacing-xs);
+}
+
+.icon-btn:hover:not(:disabled) {
+  background-color: var(--color-bg-secondary);
+}
+
+.icon-btn:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.icon-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon-btn--primary {
+  color: var(--color-primary);
+}
+
+.icon-btn--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-light);
+}
+
+.icon-btn--danger {
+  color: var(--color-error);
+}
+
+.icon-btn--danger:hover:not(:disabled) {
+  background-color: var(--color-error-light);
+}
+
+.icon-btn--sm {
+  width: 24px;
+  height: 24px;
+  padding: var(--spacing-xs);
+}
+
+.icon-btn--md {
+  width: 32px;
+  height: 32px;
+  padding: var(--spacing-sm);
+}
+
+.icon-btn--lg {
+  width: 40px;
+  height: 40px;
+  padding: var(--spacing-md);
+}
+
+/* Mobile: Touch-friendly icon buttons */
+@media (max-width: 767px) {
+  .icon-btn--sm {
+    width: 40px;
+    height: 40px;
+    padding: var(--spacing-sm);
+  }
+
+  .icon-btn--md {
+    width: 44px;
+    height: 44px;
+    padding: var(--spacing-md);
+  }
+
+  .icon-btn--lg {
+    width: 48px;
+    height: 48px;
+    padding: var(--spacing-md);
+  }
+}
+

@@ -1,0 +1,162 @@
+.json-viewer {
+  font-family: "Courier New", Courier, monospace;
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  color: var(--color-text);
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.json-viewer__object,
+.json-viewer__array {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.json-viewer__brace,
+.json-viewer__bracket {
+  color: #d4d4d4;
+  font-weight: bold;
+}
+
+.json-viewer__toggle {
+  background: transparent;
+  border: none;
+  color: #569cd6;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  margin: 0 4px 0 0;
+  vertical-align: middle;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  transition: all 0.2s ease;
+}
+
+.json-viewer__toggle:hover {
+  color: #4ec9b0;
+}
+
+.json-viewer__toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.json-viewer__toggle-icon--collapsed {
+  transform: rotate(-90deg);
+}
+
+.json-viewer__content {
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: top;
+}
+
+.json-viewer__entry {
+  display: flex;
+  align-items: flex-start;
+  margin: 2px 0;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.json-viewer__nested-value {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  animation: expand 0.3s ease;
+}
+
+@keyframes expand {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.json-viewer__collapsed-placeholder {
+  display: inline-block;
+  color: #808080;
+  font-style: italic;
+  font-size: 0.9em;
+  opacity: 0.8;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.json-viewer__key {
+  color: #9cdcfe;
+}
+
+.json-viewer__colon {
+  color: #d4d4d4;
+  margin: 0 4px;
+}
+
+.json-viewer__value {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.json-viewer__string {
+  color: #ce9178;
+}
+
+.json-viewer__number {
+  color: #b5cea8;
+}
+
+.json-viewer__boolean {
+  color: #569cd6;
+}
+
+.json-viewer__null {
+  color: #569cd6;
+  font-style: italic;
+}
+
+.json-viewer__undefined {
+  color: #808080;
+  font-style: italic;
+}
+
+.json-viewer__comma {
+  color: #d4d4d4;
+  margin-left: 4px;
+}
+
+.json-viewer__empty {
+  color: #d4d4d4;
+}
+
+/* Ensure no horizontal overflow */
+.json-viewer,
+.json-viewer__content,
+.json-viewer__entry,
+.json-viewer__value {
+  max-width: 100%;
+  box-sizing: border-box;
+}

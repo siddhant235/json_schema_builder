@@ -37,12 +37,23 @@ The app will be available at `http://localhost:5173`
 
 The project includes a GitHub Actions workflow that automatically deploys on every push to `main` or `master` branch.
 
+**⚠️ Important Setup Steps** (must be done before first deployment):
+
 1. **Enable GitHub Pages**:
 
-   - Go to repository Settings → Pages
-   - Source: Select "GitHub Actions"
+   - Go to repository **Settings → Pages**
+   - Under "Build and deployment", set **Source** to **"GitHub Actions"**
+   - Click **Save**
 
-2. **Push to main branch**:
+2. **Set Workflow Permissions** (Required to fix "turn on GitHub Pages" error):
+
+   - Go to repository **Settings → Actions → General**
+   - Scroll down to **"Workflow permissions"** section
+   - Select **"Read and write permissions"**
+   - ✅ Check **"Allow GitHub Actions to create and approve pull requests"**
+   - Click **Save**
+
+3. **Push to main branch**:
 
    ```bash
    git push origin main
@@ -50,8 +61,11 @@ The project includes a GitHub Actions workflow that automatically deploys on eve
 
    The workflow will automatically build and deploy your site.
 
-3. **Access your site**:
+4. **Access your site**:
    - URL: `https://<username>.github.io/json_schema_builder/`
+   - First deployment may take 2-3 minutes
+
+**Troubleshooting**: If you see "turn on GitHub Pages" error, ensure both steps 1 and 2 above are completed.
 
 ### Option 2: Manual Deployment
 
@@ -88,11 +102,40 @@ If your repository has a different name:
 
 - Set `base: '/'` in `vite.config.ts`
 
+### Troubleshooting
+
+**Error: "turn on GitHub Pages" or "GitHub Pages is not enabled"**
+
+This error occurs when GitHub Pages isn't properly configured. Follow these steps:
+
+1. ✅ **Check GitHub Pages is enabled**:
+
+   - Settings → Pages → Source should be **"GitHub Actions"**
+   - If it's set to a branch, change it to "GitHub Actions"
+
+2. ✅ **Check Workflow Permissions**:
+
+   - Settings → Actions → General → Workflow permissions
+   - Must be set to **"Read and write permissions"**
+   - This is the most common cause of the error!
+
+3. ✅ **Check Actions Tab**:
+
+   - Go to Actions tab in your repository
+   - Check if the workflow is running
+   - If it failed, click on it to see detailed error messages
+
+4. ✅ **Re-run the workflow**:
+   - After fixing permissions, go to Actions tab
+   - Click on the failed workflow
+   - Click "Re-run all jobs"
+
 ### Important Notes
 
 - The workflow automatically builds and deploys on push to main/master
 - First deployment: Enable GitHub Pages in repository settings (Settings → Pages → Source: GitHub Actions)
 - Deployment URL: `https://<username>.github.io/json_schema_builder/`
+- If deployment fails, check the Actions tab for detailed error messages
 
 ## 🏗️ Design Choices
 

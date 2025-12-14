@@ -2,6 +2,8 @@
 
 A visual, interactive tool for building JSON Schema definitions with a modern React interface. Create, edit, and manage complex schemas with nested objects, arrays, and validation rules.
 
+> 📖 **For detailed architecture and implementation details, see [APP_ARCHITECTURE.md](./APP_ARCHITECTURE.md)**
+
 ## 🚀 Setup & Run
 
 ### Prerequisites

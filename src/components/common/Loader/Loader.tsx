@@ -20,3 +20,4 @@ const Loader = ({ size = 'md', message }: LoaderProps) => {
 
 export default Loader;
 
+

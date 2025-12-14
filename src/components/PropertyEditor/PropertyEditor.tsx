@@ -92,7 +92,7 @@ const PropertyEditor = () => {
 
   return (
     <div className="property-editor">
-      <div className="property-editor__sidebar">
+      <div className="property-editor__panel">
         <div className="property-editor__header">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
             <h1 className="property-editor__title">JSON Schema Builder</h1>

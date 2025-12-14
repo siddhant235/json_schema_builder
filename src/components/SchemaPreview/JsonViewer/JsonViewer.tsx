@@ -228,3 +228,4 @@ const JsonViewer = ({ data, level = 0, collapsed = false }: JsonViewerProps) => 
 };
 
 export default JsonViewer;
+
